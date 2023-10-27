@@ -1,4 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698092923
+::res://::1698442014
 icon.svg::CompressedTexture2D::2292561089029447669::1698092713::1698092925::1::::<><>::
-test_scene.tscn::PackedScene::2946944534427954999::1698092713::0::1::::<><>::
+test_scene.gd::GDScript::-1::1698092939::0::1::::<>Control<>::
+test_scene.tscn::PackedScene::2946944534427954999::1698092943::0::1::::<><>::res://test_scene.gd
