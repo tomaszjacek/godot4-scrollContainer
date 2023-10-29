@@ -1,9 +1,6 @@
-res://scenes/test_scene.tscn
-res://scenes/button.tscn
-res://scenes/vocabulary_toolset.tscn
-res://scenes/VBoxContainer.gd
-res://scenes/MenuButtons.gd
-res://scenes/Global.gd
 res://scenes/files_menu.tscn
 res://scenes/files_menu.gd
-res://README.txt
+res://scenes/button.tscn
+res://scenes/vocabulary_toolset.tscn
+res://fonts/gui_buttons_theme.tres
+res://scenes/MenuButtons.gd
