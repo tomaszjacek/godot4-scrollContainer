@@ -1,4 +1,9 @@
-res://test_scene.tscn
-res://test_scene.gd
-res://Button.gd
-res://button.tscn
+res://scenes/test_scene.tscn
+res://scenes/button.tscn
+res://scenes/vocabulary_toolset.tscn
+res://scenes/VBoxContainer.gd
+res://scenes/MenuButtons.gd
+res://scenes/Global.gd
+res://scenes/files_menu.tscn
+res://scenes/files_menu.gd
+res://README.txt

@@ -11,9 +11,20 @@ config_version=5
 [application]
 
 config/name="ScrollContainer"
-run/main_scene="res://test_scene.tscn"
+run/main_scene="res://scenes/vocabulary_toolset.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scenes/Global.gd"
+
+[display]
+
+window/size/viewport_width=576
+window/size/viewport_height=1024
+window/stretch/aspect="keep_width"
+window/handheld/orientation=1
 
 [input_devices]
 
