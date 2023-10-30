@@ -1,6 +1,8 @@
 extends Control
 @onready var v_box_container = $ScrollContainer/VBoxContainer
 
+signal file_menu_selected(fileName:String)
+
 var dynamicBt = preload("res://scenes/button.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,6 +29,7 @@ func dir_contents(path):
 					print("Found file: " + file_name)
 					var b = dynamicBt.instantiate()
 					b.set_textt(file_name)
+					b.button_file_pressed.connect(work_file_selected)
 					#b.rect_min_size(Vector2(576,80))
 					v_box_container.add_child(b)
 			file_name = dir.get_next()
@@ -37,3 +40,7 @@ func move(target):
 	var move_tween  = create_tween()
 	#move_tween.interpolate_property($VBoxContainer,"position",position,target,2,Tween.TRANS_QUINT,Tween.EASE_OUT)
 	move_tween.tween_property(self,"position",target,1)
+
+
+func work_file_selected(fileName:String)->void:
+	file_menu_selected.emit(fileName)

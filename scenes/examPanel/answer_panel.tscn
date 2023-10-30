@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://pv7t2hfcv4a"]
+[gd_scene load_steps=4 format=3 uid="uid://pv7t2hfcv4a"]
 
 [ext_resource type="Theme" uid="uid://dl3uyluwj8k43" path="res://fonts/answer_theme.tres" id="1_lb44g"]
 [ext_resource type="FontFile" uid="uid://ba1dicqur3dth" path="res://fonts/Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf" id="2_320l6"]
+[ext_resource type="Script" path="res://scenes/examPanel/answer_panel.gd" id="2_r4sjj"]
 
 [node name="answer_panel" type="PanelContainer"]
 custom_minimum_size = Vector2(556, 210)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_lb44g")
+script = ExtResource("2_r4sjj")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -21,3 +23,5 @@ theme_override_fonts/font = ExtResource("2_320l6")
 theme_override_font_sizes/font_size = 60
 text = "ANSWER"
 horizontal_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_answer_panel_gui_input"]

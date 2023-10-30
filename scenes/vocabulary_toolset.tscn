@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkmedyrtlwp0x"]
+[gd_scene load_steps=7 format=3 uid="uid://dkmedyrtlwp0x"]
 
 [ext_resource type="FontFile" uid="uid://5gw4knocegat" path="res://fonts/Gugi/Gugi-Regular.ttf" id="1_61c7x"]
 [ext_resource type="Script" path="res://scenes/MenuButtons.gd" id="2_4hn80"]
 [ext_resource type="FontFile" uid="uid://d1503ss1i6h07" path="res://gugiRegular.tres" id="2_5r4dj"]
 [ext_resource type="PackedScene" uid="uid://b63a4gp1w586q" path="res://scenes/files_menu.tscn" id="4_bftm5"]
 [ext_resource type="Script" path="res://scenes/Global.gd" id="4_j641q"]
+[ext_resource type="PackedScene" uid="uid://c8x800csxoehy" path="res://scenes/examPanel/exam_panel.tscn" id="5_bjqdo"]
 
 [node name="vocabularyToolset" type="Node2D"]
 
@@ -23,7 +24,7 @@ script = ExtResource("2_4hn80")
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MenuButtons"]
 offset_top = 450.0
 offset_right = 576.0
-offset_bottom = 635.0
+offset_bottom = 923.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="UI/MenuButtons/VBoxContainer"]
@@ -62,8 +63,15 @@ text = "Quit"
 flat = true
 
 [node name="FilesMenu" parent="UI/MenuButtons" instance=ExtResource("4_bftm5")]
+custom_minimum_size = Vector2(576, 1024)
 offset_left = 576.0
 offset_right = 1152.0
+offset_bottom = 1024.0
+
+[node name="ExamPanel" parent="UI/MenuButtons" instance=ExtResource("5_bjqdo")]
+custom_minimum_size = Vector2(576, 1024)
+offset_left = 1152.0
+offset_right = 1728.0
 offset_bottom = 1024.0
 
 [node name="Global" type="Node2D" parent="."]

@@ -9,3 +9,5 @@ offset_right = 576.0
 offset_bottom = 80.0
 theme = ExtResource("1_8ixbt")
 script = ExtResource("1_l5gxl")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
