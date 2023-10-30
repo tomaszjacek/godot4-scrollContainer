@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b36mdft8b47q5"]
+
+[ext_resource type="Script" path="res://scenes/examPanel/slot.gd" id="1_812as"]
+[ext_resource type="PackedScene" uid="uid://ktidbmto7x1w" path="res://scenes/examPanel/question_panel.tscn" id="1_qcqen"]
+[ext_resource type="PackedScene" uid="uid://pv7t2hfcv4a" path="res://scenes/examPanel/answer_panel.tscn" id="2_b1itr"]
+
+[node name="slot" type="GridContainer"]
+script = ExtResource("1_812as")
+
+[node name="question_panel" parent="." instance=ExtResource("1_qcqen")]
+layout_mode = 2
+
+[node name="answer_panel" parent="." instance=ExtResource("2_b1itr")]
+layout_mode = 2
+
+[connection signal="gui_input" from="question_panel" to="." method="_on_question_panel_gui_input"]
