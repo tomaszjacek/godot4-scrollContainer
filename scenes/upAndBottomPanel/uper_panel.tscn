@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://5u7s254kpwe0"]
+
+[ext_resource type="Theme" uid="uid://b5tp0xhfxvk3m" path="res://fonts/import_button_theme.tres" id="1_a3mh8"]
+[ext_resource type="Theme" uid="uid://dtxnee30poh46" path="res://fonts/mainmenu_button_theme.tres" id="2_jrbvf"]
+[ext_resource type="Theme" uid="uid://dcehprj6yj2km" path="res://fonts/sunmoon_button_theme.tres" id="3_2dgch"]
+
+[node name="uper_panel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1830.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 1076.0
+offset_bottom = 84.0
+
+[node name="MarginContainer1" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(360, 90)
+layout_mode = 2
+
+[node name="ImportButton" type="Button" parent="HBoxContainer/MarginContainer1"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("1_a3mh8")
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(360, 90)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="MainMenuButton" type="Button" parent="HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_jrbvf")
+
+[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(360, 90)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="SunMoonModeButton" type="Button" parent="HBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = ExtResource("3_2dgch")

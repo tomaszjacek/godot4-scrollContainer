@@ -1,4 +1,5 @@
 extends PanelContainer
+#@onready var label = $Label
 
 signal answer_panel_clicked()
 # Called when the node enters the scene tree for the first time.
@@ -22,3 +23,6 @@ func _on_answer_panel_gui_input(event):
 	answer_panel_clicked.emit()
 	print("_on_answer_panel_gui_input")
 	
+func setlabell(t:String)->void:
+	$Label.text = t
+	print(t)

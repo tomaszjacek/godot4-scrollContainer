@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://ba1dicqur3dth" path="res://fonts/Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf" id="3_kutbs"]
 
 [node name="question_panel" type="PanelContainer"]
-custom_minimum_size = Vector2(556, 210)
+custom_minimum_size = Vector2(1080, 420)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_3djm5")

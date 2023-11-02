@@ -3,8 +3,6 @@ extends TabContainer
 @onready var question_panel = $question_panel
 @onready var answer_panel = $answer_panel
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	answer_panel.answer_panel_clicked.connect(change_tab)
@@ -28,8 +26,14 @@ func move(target):
 	move_tween.tween_property($answer_panel,"position",target,1)
 
 
+func set_question_panel_label(text:String)->void:
+	question_panel.setlabell(String(text))
 
 	
+
+func set_answer_panel_label(text:String)->void:
+	answer_panel.setlabell(String(text))
+
 	
 	#var position_after_slide = Vector2(0,-100)
 	#move(position_after_slide) 
@@ -44,7 +48,8 @@ func change_tab() ->void:
 		set_current_tab(1)
 		#show_answer()
 	print("change_tab %s ",current_tab)
-
+	
+	#question_panel.setlabell("dupa")
 #func _on_tab_clicked(tab):
 #	slot_clicked.emit(tab)
 

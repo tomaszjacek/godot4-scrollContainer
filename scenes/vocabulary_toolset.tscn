@@ -1,80 +1,77 @@
 [gd_scene load_steps=7 format=3 uid="uid://dkmedyrtlwp0x"]
 
-[ext_resource type="FontFile" uid="uid://5gw4knocegat" path="res://fonts/Gugi/Gugi-Regular.ttf" id="1_61c7x"]
+[ext_resource type="PackedScene" uid="uid://5u7s254kpwe0" path="res://scenes/upAndBottomPanel/uper_panel.tscn" id="1_gliq3"]
 [ext_resource type="Script" path="res://scenes/MenuButtons.gd" id="2_4hn80"]
-[ext_resource type="FontFile" uid="uid://d1503ss1i6h07" path="res://gugiRegular.tres" id="2_5r4dj"]
 [ext_resource type="PackedScene" uid="uid://b63a4gp1w586q" path="res://scenes/files_menu.tscn" id="4_bftm5"]
 [ext_resource type="Script" path="res://scenes/Global.gd" id="4_j641q"]
 [ext_resource type="PackedScene" uid="uid://c8x800csxoehy" path="res://scenes/examPanel/exam_panel.tscn" id="5_bjqdo"]
+[ext_resource type="PackedScene" uid="uid://cyfb5vq3nxq16" path="res://scenes/upAndBottomPanel/bottom_panel.tscn" id="5_q0jsx"]
 
-[node name="vocabularyToolset" type="Node2D"]
+[node name="vocabularyToolset" type="Control"]
+custom_minimum_size = Vector2(1080, 1920)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="background" type="Node2D" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="background"]
-offset_right = 576.0
-offset_bottom = 1024.0
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1080, 1920)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.603922, 0.160784, 0.247059, 1)
 
-[node name="UI" type="Node2D" parent="."]
+[node name="UI" type="Control" parent="."]
+custom_minimum_size = Vector2(1080, 1920)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="MenuButtons" type="Node2D" parent="UI"]
+[node name="uper_panel" parent="UI" instance=ExtResource("1_gliq3")]
+layout_mode = 1
+
+[node name="MenuButtons" type="Control" parent="UI"]
+custom_minimum_size = Vector2(1080, 1740)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 90.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_4hn80")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/MenuButtons"]
-offset_top = 450.0
-offset_right = 576.0
-offset_bottom = 923.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="UI/MenuButtons/VBoxContainer"]
-custom_minimum_size = Vector2(576, 80)
+[node name="ExamPanel" parent="UI/MenuButtons" instance=ExtResource("5_bjqdo")]
+custom_minimum_size = Vector2(1080, 1740)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_61c7x")
-theme_override_font_sizes/font_size = 57
-text = "vocabularyToolset
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="UI/MenuButtons/VBoxContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-
-[node name="Button_start" type="Button" parent="UI/MenuButtons/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5r4dj")
-theme_override_font_sizes/font_size = 50
-text = "Start"
-flat = true
-
-[node name="Button_settings" type="Button" parent="UI/MenuButtons/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5r4dj")
-theme_override_font_sizes/font_size = 50
-text = "Settings"
-flat = true
-
-[node name="Button_quit" type="Button" parent="UI/MenuButtons/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5r4dj")
-theme_override_font_sizes/font_size = 50
-text = "Quit"
-flat = true
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1080.0
+offset_bottom = 1740.0
 
 [node name="FilesMenu" parent="UI/MenuButtons" instance=ExtResource("4_bftm5")]
-custom_minimum_size = Vector2(576, 1024)
-offset_left = 576.0
-offset_right = 1152.0
-offset_bottom = 1024.0
+custom_minimum_size = Vector2(1080, 1740)
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1080.0
+offset_bottom = 1740.0
 
-[node name="ExamPanel" parent="UI/MenuButtons" instance=ExtResource("5_bjqdo")]
-custom_minimum_size = Vector2(576, 1024)
-offset_left = 1152.0
-offset_right = 1728.0
-offset_bottom = 1024.0
+[node name="bottom_panel" parent="UI" instance=ExtResource("5_q0jsx")]
+layout_mode = 1
+offset_top = 1830.0
+offset_bottom = 0.0
 
 [node name="Global" type="Node2D" parent="."]
 script = ExtResource("4_j641q")
-
-[connection signal="pressed" from="UI/MenuButtons/VBoxContainer/Button_start" to="UI/MenuButtons" method="_on_button_start_pressed"]
