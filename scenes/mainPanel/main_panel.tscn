@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://b63a4gp1w586q"]
 
-[ext_resource type="Script" path="res://scenes/files_menu.gd" id="1_kra1a"]
+[ext_resource type="Script" path="res://scenes/mainPanel/main_panel.gd" id="1_t1jsd"]
 
-[node name="FilesMenu" type="Control"]
+[node name="MainPanel" type="Control"]
 custom_minimum_size = Vector2(576, 574)
 layout_mode = 3
 anchors_preset = 15
@@ -12,7 +12,7 @@ offset_right = -576.0
 offset_bottom = -1024.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kra1a")
+script = ExtResource("1_t1jsd")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 clip_contents = false

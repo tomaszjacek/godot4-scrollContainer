@@ -18,7 +18,7 @@ func _ready():
 		
 
 
-func update(data:BatchData) -> void:
+func update(data:ChapterData) -> void:
 	print("UPDATING!!!!!!!!!!!!")
 	for child in v_box_container.get_children():
 		child.queue_free()

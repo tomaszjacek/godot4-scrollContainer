@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkmedyrtlwp0x"]
+
+[ext_resource type="Script" path="res://scenes/user_interface.gd" id="1_qh53i"]
+[ext_resource type="PackedScene" uid="uid://5u7s254kpwe0" path="res://scenes/upAndBottomPanel/uper_panel.tscn" id="2_lajfm"]
+[ext_resource type="Script" path="res://scenes/menu_buttons.gd" id="3_x52c4"]
+[ext_resource type="PackedScene" uid="uid://c8x800csxoehy" path="res://scenes/examPanel/exam_panel.tscn" id="4_oplql"]
+[ext_resource type="PackedScene" uid="uid://b63a4gp1w586q" path="res://scenes/mainPanel/main_panel.tscn" id="5_w2tf3"]
+[ext_resource type="PackedScene" uid="uid://f1t7exgp28r7" path="res://scenes/chaptersPanel/chapters_panel.tscn" id="6_mokij"]
+[ext_resource type="PackedScene" uid="uid://cyfb5vq3nxq16" path="res://scenes/upAndBottomPanel/bottom_panel.tscn" id="7_ma8ec"]
+[ext_resource type="Script" path="res://scenes/Global.gd" id="8_e8gpi"]
+
+[node name="vocabularyToolsetMainScene" type="Control"]
+custom_minimum_size = Vector2(1080, 1920)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1080, 1920)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.603922, 0.160784, 0.247059, 1)
+
+[node name="UserInterface" type="Control" parent="."]
+custom_minimum_size = Vector2(1080, 1920)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qh53i")
+
+[node name="UperPanel" parent="UserInterface" instance=ExtResource("2_lajfm")]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.047
+offset_bottom = -0.240005
+
+[node name="MenuButtons" type="Control" parent="UserInterface"]
+custom_minimum_size = Vector2(1080, 1740)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 90.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_x52c4")
+
+[node name="ExamPanel" parent="UserInterface/MenuButtons" instance=ExtResource("4_oplql")]
+custom_minimum_size = Vector2(1080, 1740)
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1080.0
+offset_bottom = 1740.0
+
+[node name="MainPanel" parent="UserInterface/MenuButtons" instance=ExtResource("5_w2tf3")]
+custom_minimum_size = Vector2(1080, 1740)
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1080.0
+offset_bottom = 1740.0
+
+[node name="ChaptersPanel" parent="UserInterface/MenuButtons" instance=ExtResource("6_mokij")]
+layout_mode = 1
+
+[node name="BottomPanel" parent="UserInterface" instance=ExtResource("7_ma8ec")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.953
+offset_top = 0.239868
+offset_bottom = 0.0
+
+[node name="Global" type="Node2D" parent="."]
+script = ExtResource("8_e8gpi")

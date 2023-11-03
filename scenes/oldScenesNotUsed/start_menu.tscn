@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dr2pja0ac1u8"]
 
-[ext_resource type="FontFile" uid="uid://5gw4knocegat" path="res://fonts/Gugi/Gugi-Regular.ttf" id="1_fn5hm"]
-[ext_resource type="FontFile" uid="uid://d1503ss1i6h07" path="res://gugiRegular.tres" id="2_nn145"]
+[ext_resource type="FontFile" uid="uid://5gw4knocegat" path="res://fonts/Gugi/Gugi-Regular.ttf" id="1_g6vli"]
+[ext_resource type="FontFile" uid="uid://d1503ss1i6h07" path="res://gugiRegular.tres" id="2_70bm0"]
 
 [node name="StartMenu" type="VBoxContainer"]
 custom_minimum_size = Vector2(1080, 960)
@@ -15,7 +15,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(576, 80)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_fn5hm")
+theme_override_fonts/font = ExtResource("1_g6vli")
 theme_override_font_sizes/font_size = 57
 text = "vocabularyToolset
 "
@@ -28,21 +28,21 @@ layout_mode = 2
 
 [node name="Button_start" type="Button" parent="."]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_nn145")
+theme_override_fonts/font = ExtResource("2_70bm0")
 theme_override_font_sizes/font_size = 50
 text = "Start"
 flat = true
 
 [node name="Button_settings" type="Button" parent="."]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_nn145")
+theme_override_fonts/font = ExtResource("2_70bm0")
 theme_override_font_sizes/font_size = 50
 text = "Settings"
 flat = true
 
 [node name="Button_quit" type="Button" parent="."]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_nn145")
+theme_override_fonts/font = ExtResource("2_70bm0")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 flat = true

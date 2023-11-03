@@ -1,5 +1,5 @@
 extends Node2D
-class_name BatchData
+class_name ChapterData
 
 var fileName: String = ""
 var pathName: String = ""
