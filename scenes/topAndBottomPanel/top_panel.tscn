@@ -6,21 +6,17 @@
 [ext_resource type="Theme" uid="uid://dcehprj6yj2km" path="res://fonts/sunmoon_button_theme.tres" id="4_vtqgg"]
 
 [node name="uper_panel" type="Control"]
+custom_minimum_size = Vector2(1080, 90)
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -1830.0
 grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_ju3kl")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 1076.0
-offset_bottom = 84.0
+offset_right = 1088.0
+offset_bottom = 90.0
 
 [node name="MarginContainer1" type="MarginContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(360, 90)

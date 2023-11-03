@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://datka6xsds8ba"]
+
+[ext_resource type="Theme" uid="uid://bxut3xfgc0pit" path="res://fonts/guit_button_theme.tres" id="1_2sgui"]
+[ext_resource type="Script" path="res://scenes/loadPanel/batch_config.gd" id="2_fmeo6"]
+
+[node name="batch_config" type="Control"]
+custom_minimum_size = Vector2(1080, 1560)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2sgui")
+script = ExtResource("2_fmeo6")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 131.0
+grow_horizontal = 2
+columns = 2
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "fileName"
+
+[node name="Label2" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "test"
+
+[node name="Label3" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "how big do you want to make  one part"
+
+[node name="HSlider" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+tick_count = 1
+
+[node name="Label4" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "how many days"
+
+[node name="HSlider2" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+min_value = 30.0
+max_value = 60.0
+value = 30.0
+rounded = true
+tick_count = 1
+
+[node name="Label5" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "generate"

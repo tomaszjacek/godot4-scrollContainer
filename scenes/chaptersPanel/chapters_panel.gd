@@ -1,6 +1,6 @@
 extends Control
 @onready var chapter = preload("res://scenes/chaptersPanel/chapter.tscn")
-@onready var grid_container = $VBoxContainer/GridContainer
+@onready var grid_container = $ScrollContainer/VBoxContainer/GridContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

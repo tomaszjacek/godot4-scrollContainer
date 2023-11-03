@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1usl6pmuvwgc"]
+
+[ext_resource type="Script" path="res://scenes/loadPanel/button_load_panel.gd" id="2_6nw4y"]
+
+[node name="ButtonLoadPanel" type="Button"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 80.0
+offset_bottom = 80.0
+script = ExtResource("2_6nw4y")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

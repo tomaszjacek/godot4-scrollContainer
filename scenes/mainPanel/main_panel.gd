@@ -3,7 +3,7 @@ extends Control
 
 signal file_menu_selected(fileName:String)
 
-var dynamicBt = preload("res://scenes/mainPanel/button.tscn")
+var dynamicBtMainPanel = preload("res://scenes/mainPanel/batch.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var path = "H://download/testVocab/"
@@ -27,11 +27,11 @@ func dir_contents(path):
 				var ext = file_name.get_extension()
 				if ext == "txt":
 					print("Found file: " + file_name)
-					var b = dynamicBt.instantiate()
-					b.set_textt(file_name)
-					b.button_file_pressed.connect(work_file_selected)
+					var b = dynamicBtMainPanel.instantiate()
 					#b.rect_min_size(Vector2(576,80))
 					v_box_container.add_child(b)
+					b.set_textt(file_name)
+					b.button_file_pressed.connect(work_file_selected)
 			file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access the path.")
@@ -43,4 +43,5 @@ func move(target):
 
 
 func work_file_selected(fileName:String)->void:
+	print("work_file_selected _01:", fileName)
 	file_menu_selected.emit(fileName)

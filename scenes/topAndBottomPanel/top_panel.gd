@@ -16,16 +16,17 @@ func print_dupa() ->void:
 
 
 func _on_import_button_pressed():
-	toppanel_button_pressed.emit("ImportPanel")
+	toppanel_button_pressed.emit("LoadPanel")
 #	pass # Replace with function body.
 
 
 
 func _on_main_menu_button_pressed():
-	toppanel_button_pressed.emit("MainMenu")
+	toppanel_button_pressed.emit("MainPanel")
 #	pass # Replace with function body.
 
 
 func _on_sun_moon_mode_button_pressed():
-	sunmoon_button_pressed.emit()
+	toppanel_button_pressed.emit("ChaptersPanel")
+	#sunmoon_button_pressed.emit()
 #	pass # Replace with function body.

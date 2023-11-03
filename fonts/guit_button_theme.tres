@@ -1,7 +1,6 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bxut3xfgc0pit"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bxut3xfgc0pit"]
 
 [ext_resource type="FontFile" uid="uid://5gw4knocegat" path="res://fonts/Gugi/Gugi-Regular.ttf" id="1_2x20x"]
-[ext_resource type="Texture2D" uid="uid://bmt8iyxghmsew" path="res://images/quit.png" id="2_w74xy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w3k5a"]
 
@@ -19,13 +18,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80b1e"]
-texture = ExtResource("2_w74xy")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
-region_rect = Rect2(113, 81, 30, 14)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pgvp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf80k"]
 content_margin_left = 4.0
@@ -61,5 +54,5 @@ Button/fonts/font = ExtResource("1_2x20x")
 Button/styles/disabled = SubResource("StyleBoxEmpty_w3k5a")
 Button/styles/focus = SubResource("StyleBoxTexture_8iffr")
 Button/styles/hover = SubResource("StyleBoxFlat_rr0ek")
-Button/styles/normal = SubResource("StyleBoxTexture_80b1e")
+Button/styles/normal = SubResource("StyleBoxFlat_3pgvp")
 Button/styles/pressed = SubResource("StyleBoxFlat_tf80k")

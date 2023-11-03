@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://6h27245lxalb"]
+
+[ext_resource type="Theme" uid="uid://bxut3xfgc0pit" path="res://fonts/gui_button_theme.tres" id="1_52p40"]
+
+[node name="ButtonMainPanel" type="Button"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 80.0
+offset_bottom = 80.0
+theme = ExtResource("1_52p40")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
