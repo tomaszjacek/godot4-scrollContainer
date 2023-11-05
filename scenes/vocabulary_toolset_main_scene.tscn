@@ -28,7 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.603922, 0.160784, 0.247059, 1)
+color = Color(0.933333, 0.733333, 0.607843, 1)
 
 [node name="UserInterface" type="Control" parent="."]
 custom_minimum_size = Vector2(1080, 1920)

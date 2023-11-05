@@ -26,7 +26,7 @@ func dir_contents(path):
 
 				var ext = file_name.get_extension()
 				if ext == "txt":
-					print("Found file: " + file_name)
+					#print("Found file: " + file_name)
 					var b = dynamicBtMainPanel.instantiate()
 					#b.rect_min_size(Vector2(576,80))
 					v_box_container.add_child(b)
@@ -43,5 +43,5 @@ func move(target):
 
 
 func work_file_selected(fileName:String)->void:
-	print("work_file_selected _01:", fileName)
+	#print("work_file_selected _01:", fileName)
 	file_menu_selected.emit(fileName)

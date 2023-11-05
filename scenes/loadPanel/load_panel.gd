@@ -31,7 +31,7 @@ func dir_contents():
 
 				var ext = file_name.get_extension()
 				if ext == "txt":
-					print("Found file: " + file_name)
+					#print("Found file: " + file_name)
 					var b = dynamicBtLoadPanel.instantiate()
 					b.set_textt(file_name)
 					b.buttonload_file_pressed.connect(work_file_selected)

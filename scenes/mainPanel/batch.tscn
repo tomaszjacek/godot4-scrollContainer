@@ -1,33 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxeqojgxv2ukw"]
+[gd_scene load_steps=4 format=3 uid="uid://dxeqojgxv2ukw"]
 
 [ext_resource type="Script" path="res://scenes/mainPanel/batch.gd" id="1_ay7gc"]
 [ext_resource type="Texture2D" uid="uid://737ll1jgr62j" path="res://scenes/mainPanel/batch_atlas_texture.tres" id="1_mg35r"]
+[ext_resource type="Theme" uid="uid://c8tp3l2ernw1i" path="res://fonts/guit_black_button_theme.tres" id="3_jbin2"]
 
 [node name="batch" type="Control"]
-custom_minimum_size = Vector2(1080, 90)
+custom_minimum_size = Vector2(1080, 340)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -1920.0
+offset_bottom = -1580.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ay7gc")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(1080, 340)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
 texture = ExtResource("1_mg35r")
-expand_mode = 1
+expand_mode = 3
 
-[node name="BatchNameLabel" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 33
+[node name="BatchNameLabel" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_jbin2")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,4 +1,5 @@
 res://scenes/mainPanel/main_panel.tscn
+res://fonts/guit_black_button_theme.tres
 res://fonts/question_theme.tres
 res://fonts/answer_theme.tres
 res://fonts/import_button_theme.tres
@@ -8,8 +9,8 @@ res://scenes/chaptersPanel/chapter_texture.tres
 res://fonts/settings_button_theme.tres
 res://fonts/quit_button_theme.tres
 res://fonts/reload_button_theme.tres
-res://gugiRegular.tres
 res://fonts/gui_button_theme.tres
+res://gugiRegular.tres
 res://scenes/file_batches_menu.tscn
 res://scenes/examPanel/question_panel.tscn
 res://scenes/examPanel/answer_panel.tscn
@@ -28,12 +29,10 @@ res://scenes/chaptersPanel/chapter.tscn
 res://scenes/loadPanel/load_panel.tscn
 res://scenes/oldScenesNotUsed/ButtonMainPanel.tscn
 res://scenes/mainPanel/batch.tscn
-res://scenes/menu_buttons.gd
-res://scenes/mainPanel/main_panel.gd
 res://scenes/loadPanel/batch_config.tscn
-res://fonts/guit_button_theme.tres
+res://scripts/module_file_manager.gd
+res://scripts/module_constants.gd
+res://autoload/autoload_globals.gd
 res://scenes/loadPanel/load_panel.gd
-res://scenes/loadPanel/button_load_panel.gd
-res://scenes/user_interface.gd
-res://scenes/Global.gd
-res://scenes/loadPanel/batch_config.gd
+res://scenes/mainPanel/main_panel.gd
+res://scripts/module_file_compiler.gd

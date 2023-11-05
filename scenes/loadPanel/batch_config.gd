@@ -13,4 +13,4 @@ func _process(delta):
 
 
 func loadfilename()->void:
-	label_2.text = Global.file_grabbed
+	$%FileName.text = Global.file_grabbed

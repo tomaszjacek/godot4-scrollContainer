@@ -1,7 +1,7 @@
 extends Control
 
 signal button_file_pressed(fileName:String)
-@onready var batch_name_label = $BatchNameLabel
+@onready var batch_name_label = $%BatchNameLabel
 
 
 # Called when the node enters the scene tree for the first time.
