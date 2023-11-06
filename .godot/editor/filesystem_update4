@@ -36,3 +36,6 @@ res://autoload/autoload_globals.gd
 res://scenes/loadPanel/load_panel.gd
 res://scenes/mainPanel/main_panel.gd
 res://scripts/module_file_compiler.gd
+res://test.gd
+res://scripts/dict_data.gd
+res://scripts/module_load_save.gd

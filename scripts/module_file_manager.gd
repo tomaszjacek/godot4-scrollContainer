@@ -7,6 +7,13 @@ static func Print_File(filePath:String) -> void:
 	var text:String = FileAccess.open(filePath,FileAccess.READ).get_as_text()
 	print(text)
 
+static func list_file_data() -> Array:
+	var file_list_array: Array = []
+	for file in DirAccess.get_files_at(M_C.PATH_FOLDER_DATA):
+		if file.ends_with(M_C.FORMAT_DATA):
+			file_list_array.append(file)
+	return file_list_array
+
 static func Print_All_Files_In_Folder(filePathFolder:String) -> void:
 	for file in DirAccess.get_files_at(filePathFolder):
 		Print_File(filePathFolder + file)
@@ -31,3 +38,10 @@ static func Encode_Data_File(filePath:String) -> void:
 	print("Encode_Data_File _04 ", save_file_path)
 	var encoded_text = M_D_C.encode_data_to_string(load_file_data)
 	Save_Text_File(save_file_path,encoded_text)
+
+
+static func Load_Text_File(fileName:String) -> String:
+	var text:String = FileAccess.open(fileName,FileAccess.READ).get_as_text()
+	return text
+
+
