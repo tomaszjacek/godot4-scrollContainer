@@ -1,5 +1,5 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1699305727
+::res://::1699377429
 export_presets.cfg::TextFile::-1::1698883981::0::1::::<><>::
 gugiRegular.tres::FontFile::9047672219758458310::1699136471::0::1::::<><>::
 icon.svg::CompressedTexture2D::2292561089029447669::1698089113::1698089325::1::::<><>::
@@ -8,7 +8,7 @@ test.gd::GDScript::-1::1699305727::0::1::::<>EditorScript<>::
 ::res://autoload/::1699204968
 autoload_globals.gd::GDScript::-1::1699204968::0::1::::<>Node<>::
 ::res://data/::1699304076
-vocabN5_notatnik_UTF-8.txt::TextFile::-1::1699287849::0::1::::<><>::
+vocabN5_notatnik_UTF-8.txt::TextFile::-1::1699304054::0::1::::<><>::
 ::res://fonts/::1699136468
 answer_theme.tres::Theme::7990399716786235766::1699136467::0::1::::<><>::uid://c81c6c7lieccv::::res://images/answerPanelTexture.png
 guit_black_button_theme.tres::Theme::7129257761560808076::1699136467::0::1::::<><>::uid://5gw4knocegat::::res://fonts/Gugi/Gugi-Regular.ttf
@@ -107,13 +107,13 @@ resolution_mode_button.tscn::PackedScene::4058935520281804325::1699312549::0::1:
 tmp_scene_button_selection.tscn::PackedScene::8437520669613982430::1698780010::0::1::::<><>::
 window_mode_button.gd::GDScript::-1::1698777538::0::1::::<>Control<>::
 window_mode_button.tscn::PackedScene::1368092035902174094::1699312549::0::1::::<><>::uid://dshgy58x256xu::::res://scenes/settingsPanel/tmp_scene_button_selection.tscn<>res://scenes/settingsPanel/window_mode_button.gd
-::res://scenes/topAndBottomPanel/::1699312658
-bottom_panel.tscn::PackedScene::6467810923276902875::1699312860::0::1::::<><>::uid://bd3kcfbpgbcm0::::res://fonts/settings_button_theme.tres<>uid://curq74l3u514y::::res://fonts/quit_button_theme.tres
+::res://scenes/topAndBottomPanel/::1699313308
+bottom_panel.tscn::PackedScene::6467810923276902875::1699313308::0::1::::<><>::uid://bd3kcfbpgbcm0::::res://fonts/settings_button_theme.tres<>uid://curq74l3u514y::::res://fonts/quit_button_theme.tres
 top_panel.gd::GDScript::-1::1699038991::0::1::::<>Control<>::
 top_panel.tscn::PackedScene::2148929418087174193::1699312549::0::1::::<><>::res://scenes/topAndBottomPanel/top_panel.gd<>uid://b5tp0xhfxvk3m::::res://fonts/import_button_theme.tres<>uid://dtxnee30poh46::::res://fonts/mainmenu_button_theme.tres<>uid://dcehprj6yj2km::::res://fonts/sunmoon_button_theme.tres
-::res://scripts/::1699312658
+::res://scripts/::1699313075
+job_data.gd::GDScript::-1::1699312860::0::1::::JobData<>Resource<>::
 module_constants.gd::GDScript::-1::1699203768::0::1::::<>RefCounted<>::
-module_file_manager.gd::GDScript::-1::1699307113::0::1::::<>RefCounted<>::
 module_file_compiler.gd::GDScript::-1::1699305692::0::1::::<>RefCounted<>::
-dict_data.gd::GDScript::-1::1699312860::0::1::::JobData<>Resource<>::
-module_load_save.gd::GDScript::-1::1699312839::0::1::::LoadSaveGame<>Resource<>::
+module_file_manager.gd::GDScript::-1::1699307113::0::1::::<>RefCounted<>::
+module_load_save.gd::GDScript::-1::1699313075::0::1::::LoadSaveGame<>Resource<>::
