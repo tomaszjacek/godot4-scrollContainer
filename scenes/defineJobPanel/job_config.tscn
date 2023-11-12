@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://datka6xsds8ba"]
+[gd_scene load_steps=5 format=3 uid="uid://datka6xsds8ba"]
 
-[ext_resource type="Theme" uid="uid://c8tp3l2ernw1i" path="res://fonts/guit_black_button_theme.tres" id="1_6wcjt"]
-[ext_resource type="Script" path="res://scenes/loadPanel/batch_config.gd" id="2_fmeo6"]
+[ext_resource type="Theme" uid="uid://c8tp3l2ernw1i" path="res://fonts/guit_black_button_theme.tres" id="1_vb56u"]
+[ext_resource type="Script" path="res://scenes/defineJobPanel/job_config.gd" id="2_wsjnb"]
+[ext_resource type="Script" path="res://scenes/defineJobPanel/NParts.gd" id="3_s1t8p"]
+[ext_resource type="Script" path="res://scenes/defineJobPanel/NRepetitions.gd" id="4_lknib"]
 
-[node name="batch_config" type="Control"]
+[node name="job_config" type="Control"]
 custom_minimum_size = Vector2(1080, 1560)
 layout_mode = 3
 anchors_preset = 15
@@ -11,8 +13,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_6wcjt")
-script = ExtResource("2_fmeo6")
+theme = ExtResource("1_vb56u")
+script = ExtResource("2_wsjnb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -57,36 +59,40 @@ theme_override_constants/h_separation = 9
 theme_override_constants/v_separation = 19
 columns = 3
 
-[node name="SizeLabel" type="Label" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="NPartsLabel" type="Label" parent="VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "words number on one day"
+text = "number of parts"
 
-[node name="Size" type="HSlider" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="NParts" type="HSlider" parent="VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 40)
 layout_direction = 3
 layout_mode = 2
+min_value = 4.0
+max_value = 8.0
+value = 5.0
 tick_count = 1
+script = ExtResource("3_s1t8p")
 
 [node name="EmptyLabel8" type="Label" parent="VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="DurationLabel" type="Label" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="NRepetitionsLabel" type="Label" parent="VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "days on whole vocabulary list"
+text = "number of repetitions"
 
-[node name="Duration" type="HSlider" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="NRepetitions" type="HSlider" parent="VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
-min_value = 30.0
-max_value = 60.0
-value = 30.0
-rounded = true
+min_value = 6.0
+max_value = 10.0
+value = 6.0
 tick_count = 1
+script = ExtResource("4_lknib")
 
 [node name="EmptyLabel6" type="Label" parent="VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
@@ -106,10 +112,26 @@ layout_mode = 2
 [node name="VSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
 
+[node name="FinalInfo" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "aloha"
+autowrap_mode = 2
+
+[node name="WarnInfo" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+autowrap_mode = 2
+
 [node name="Button" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "generate"
+text = "create job"
+
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/GridContainer/NParts" to="VBoxContainer/MarginContainer/GridContainer/NParts" method="_on_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/GridContainer/NRepetitions" to="VBoxContainer/MarginContainer/GridContainer/NRepetitions" method="_on_value_changed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="save_job"]

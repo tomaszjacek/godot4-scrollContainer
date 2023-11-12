@@ -1,30 +1,31 @@
 extends Control
-@onready var main_panel = $MainPanel
-@onready var exam_panel = $ExamPanel
-@onready var chapters_panel = $ChaptersPanel
-@onready var load_panel = $LoadPanel
-@onready var batch_config = $BatchConfig
+@onready var main_panel = $%MainPanel
+@onready var exam_panel = $%ExamPanel
+@onready var chapters_panel = $%ChaptersPanel
+@onready var define_job_panel = $%DefineJobPanel
+@onready var job_config = $%JobConfig
 
 var chapter_data: ChapterData
 var panel_on_screen = "MainPanel"
 
 func _ready():
+	M_S.toppanel_button_pressed.connect(show_ui_panel)
 	#main_panel.file_menu_selected.connect(file_selected)
 	main_panel.show()
 	exam_panel.hide()
 	chapters_panel.hide()
-	load_panel.hide()
-	batch_config.hide()
+	define_job_panel.hide()
+	job_config.hide()
 	chapter_data = ChapterData.new()
-	load_panel.file_to_load_selected.connect(show_ui_panel)
+	define_job_panel.file_to_load_selected.connect(show_ui_panel)
 	#var move_tween  = create_tween()
 	#move_tween.tween_property($VBoxContainer,"position",Vector2(0,-100),1)
 	
 func show_ui_panel(selectedPanelName:String)->void:
 	for p in self.get_children():
 		if p.name == selectedPanelName and not p.visible :
-			if selectedPanelName == "BatchConfig":
-				batch_config.loadfilename()
+			if selectedPanelName == "JobConfig":
+				job_config.loadfilename()
 			p.show()
 		else:
 			p.hide()

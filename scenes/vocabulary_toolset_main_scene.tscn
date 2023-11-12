@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkmedyrtlwp0x"]
+[gd_scene load_steps=12 format=3 uid="uid://dkmedyrtlwp0x"]
 
 [ext_resource type="Script" path="res://scenes/user_interface.gd" id="1_qh53i"]
+[ext_resource type="Script" path="res://scenes/vocabulary_toolset_main_scene.gd" id="1_v22e7"]
+[ext_resource type="PackedScene" uid="uid://xxucwdb1f4xn" path="res://scenes/saveLoad/save_load.tscn" id="1_yidcr"]
 [ext_resource type="PackedScene" uid="uid://5u7s254kpwe0" path="res://scenes/topAndBottomPanel/top_panel.tscn" id="2_lajfm"]
 [ext_resource type="Script" path="res://scenes/menu_buttons.gd" id="3_x52c4"]
 [ext_resource type="PackedScene" uid="uid://c8x800csxoehy" path="res://scenes/examPanel/exam_panel.tscn" id="4_oplql"]
 [ext_resource type="PackedScene" uid="uid://f1t7exgp28r7" path="res://scenes/chaptersPanel/chapters_panel.tscn" id="6_mokij"]
 [ext_resource type="PackedScene" uid="uid://bttpi86tuwk06" path="res://scenes/mainPanel/main_panel.tscn" id="7_dq43t"]
 [ext_resource type="PackedScene" uid="uid://cyfb5vq3nxq16" path="res://scenes/topAndBottomPanel/bottom_panel.tscn" id="7_ma8ec"]
-[ext_resource type="PackedScene" uid="uid://bokmyryh1grhn" path="res://scenes/loadPanel/load_panel.tscn" id="7_qfu6y"]
-[ext_resource type="Script" path="res://scenes/Global.gd" id="8_e8gpi"]
-[ext_resource type="PackedScene" uid="uid://datka6xsds8ba" path="res://scenes/loadPanel/batch_config.tscn" id="8_s53au"]
+[ext_resource type="PackedScene" uid="uid://datka6xsds8ba" path="res://scenes/defineJobPanel/job_config.tscn" id="8_s53au"]
+[ext_resource type="PackedScene" uid="uid://bokmyryh1grhn" path="res://scenes/defineJobPanel/define_job_panel.tscn" id="8_ul6u5"]
 
 [node name="vocabularyToolsetMainScene" type="Control"]
 custom_minimum_size = Vector2(1080, 1920)
@@ -19,6 +20,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v22e7")
+
+[node name="saveLoadModule" parent="." instance=ExtResource("1_yidcr")]
+layout_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1080, 1920)
@@ -68,6 +73,7 @@ layout_mode = 2
 script = ExtResource("3_x52c4")
 
 [node name="ExamPanel" parent="UserInterface/VBoxContainer/MenuButtons" instance=ExtResource("4_oplql")]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(1080, 1560)
 layout_mode = 2
 anchors_preset = 0
@@ -77,24 +83,23 @@ offset_right = 1080.0
 offset_bottom = 1560.0
 
 [node name="ChaptersPanel" parent="UserInterface/VBoxContainer/MenuButtons" instance=ExtResource("6_mokij")]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_bottom = 1.0
 offset_bottom = 0.0
 
 [node name="MainPanel" parent="UserInterface/VBoxContainer/MenuButtons" instance=ExtResource("7_dq43t")]
+unique_name_in_owner = true
 layout_mode = 1
 
-[node name="LoadPanel" parent="UserInterface/VBoxContainer/MenuButtons" instance=ExtResource("7_qfu6y")]
+[node name="JobConfig" parent="UserInterface/VBoxContainer/MenuButtons" instance=ExtResource("8_s53au")]
+unique_name_in_owner = true
 layout_mode = 1
 
-[node name="BatchConfig" parent="UserInterface/VBoxContainer/MenuButtons" instance=ExtResource("8_s53au")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 1080.0
-offset_bottom = 1560.0
+[node name="DefineJobPanel" parent="UserInterface/VBoxContainer/MenuButtons" instance=ExtResource("8_ul6u5")]
+unique_name_in_owner = true
+layout_mode = 1
 
 [node name="BottomPanel" parent="UserInterface/VBoxContainer" instance=ExtResource("7_ma8ec")]
 layout_mode = 2
@@ -111,6 +116,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.960784, 0.886275, 0.917647, 1)
-
-[node name="Global" type="Node2D" parent="."]
-script = ExtResource("8_e8gpi")

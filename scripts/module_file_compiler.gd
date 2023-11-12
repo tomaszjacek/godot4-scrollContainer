@@ -16,7 +16,7 @@ static func compile_csvdata_files()-> void:
 			var save_file_path:String = file.replace(M_C.FORMAT_CSVDATA,M_C.FORMAT_DATA)
 			if !M_F_M.File_Exists(M_C.PATH_FOLDER_DATA +save_file_path) :
 				print("M_F_C: nie ma takiego pliku - bede kondowal ",M_C.PATH_FOLDER_DATA +save_file_path)
-				M_F_M.Encode_Data_File(M_C.PATH_FOLDER_DATA + file)
+				M_F_M.Encode_Data_File(M_C.PATH_FOLDER_DATA + file, file)
 			else:
 				print("M_F_C: juz taki plik data jest ",M_C.PATH_FOLDER_DATA +save_file_path)
 
@@ -36,7 +36,7 @@ static func give_me_file_as_dictionary(fileName:String,dict:Dictionary)->void:
 	
 	
 	
-static func data_parse_CSV(all_csv_lines:PackedStringArray,stored_csv_dict:Dictionary) -> Dictionary:
+static func data_parse_CSV(all_csv_lines:PackedStringArray,stored_csv_dict:Dictionary) -> void:
 	#stored_csv_dict: Dictionary = {}
 	if all_csv_lines.size()>1:
 		var csv_headers_processed:bool = false
@@ -73,5 +73,5 @@ static func data_parse_CSV(all_csv_lines:PackedStringArray,stored_csv_dict:Dicti
 							csv_i += 1
 			lineNumber += 1
 	
-	return stored_csv_dict
+	#return stored_csv_dict
 

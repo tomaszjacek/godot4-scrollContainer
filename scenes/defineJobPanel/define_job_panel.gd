@@ -4,7 +4,8 @@ extends Control
 @onready var v_box_container = $ScrollContainer/VBoxContainer
 @onready var data_path_line_edit = $ScrollContainer/VBoxContainer/HBoxContainer/DataPathLineEdit
 @onready var download_button = $ScrollContainer/VBoxContainer/HBoxContainer/DownloadButton
-@onready var dynamicBtLoadPanel = preload("res://scenes/loadPanel/ButtonLoadPanel.tscn")
+@onready var dynamicBtLoadPanel = preload("res://scenes/defineJobPanel/ButtonLoadPanel.tscn")
+
 
 signal file_to_load_selected(fileName:String)
 
@@ -37,7 +38,7 @@ func move(target):
 
 func work_file_selected(fileName:String)->void:
 	Global.file_grabbed = fileName
-	file_to_load_selected.emit("BatchConfig")
+	file_to_load_selected.emit("JobConfig")
 
 
 func _on_download_button_pressed():

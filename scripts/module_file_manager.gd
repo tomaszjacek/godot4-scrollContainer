@@ -28,7 +28,7 @@ static func File_Exists(path:String) -> bool:
 	printerr("MODULE_FILE_MANAGER: File does not exists! path:", path)
 	return false
 	
-static func Encode_Data_File(filePath:String) -> void:
+static func Encode_Data_File(filePath:String,file:String) -> void:
 	print("Encode_Data_File _01")
 	if !File_Exists(filePath):return
 	print("Encode_Data_File _02")
@@ -38,8 +38,13 @@ static func Encode_Data_File(filePath:String) -> void:
 	print("Encode_Data_File _04 ", save_file_path)
 	var encoded_text = M_D_C.encode_data_to_string(load_file_data)
 	Save_Text_File(save_file_path,encoded_text)
-
-
+	
+	var store_file_name = file.replace(M_C.FORMAT_CSVDATA,"")
+	var clean_data:PackedStringArray = load_file_data.split("\r\n")
+	Global.dictFilesStats[store_file_name] = clean_data.size()
+	print("Global.dictFilesStats[store_file_name]: ",Global.dictFilesStats[store_file_name])
+	Global.Encode_Data_File = true
+	
 static func Load_Text_File(fileName:String) -> String:
 	var text:String = FileAccess.open(fileName,FileAccess.READ).get_as_text()
 	return text

@@ -1,12 +1,13 @@
+Label
+VBoxContainer
+NavigationRegion3D
+GridContainer
 MarginContainer
 HBoxContainer
 HSeparator
-Label
 VSeparator
-VBoxContainer
 Button
 HSlider
-GridContainer
 ScrollContainer
 TextureRect
 ColorRect

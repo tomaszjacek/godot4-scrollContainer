@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://f2ys3ysake8i"]
+[gd_scene load_steps=6 format=3 uid="uid://f2ys3ysake8i"]
 
 [ext_resource type="Texture2D" uid="uid://c3pep84wftb6a" path="res://scenes/chaptersPanel/chapter_texture.tres" id="1_nhq5j"]
+[ext_resource type="Script" path="res://scenes/chaptersPanel/chapter.gd" id="1_um8sb"]
+[ext_resource type="Theme" uid="uid://c8tp3l2ernw1i" path="res://fonts/guit_black_button_theme.tres" id="2_dt52a"]
+[ext_resource type="Texture2D" uid="uid://xk3v6f3ixfvs" path="res://images/learningIcon.png" id="4_vbinj"]
+[ext_resource type="Texture2D" uid="uid://cba60ral5q6o6" path="res://images/testIcon.png" id="5_d62sf"]
 
 [node name="chapter" type="Control"]
 custom_minimum_size = Vector2(520, 400)
@@ -12,6 +16,7 @@ offset_right = -560.0
 offset_bottom = -1520.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_um8sb")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -20,24 +25,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_dt52a")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
 texture = ExtResource("1_nhq5j")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -49.5
-offset_top = -13.0
-offset_right = 49.5
-offset_bottom = 13.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 43
-text = "chapter nr. 1"
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Info1Label" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "aloha"
+
+[node name="Info2Label" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "n words
+"
+
+[node name="LearningIcon" type="Sprite2D" parent="."]
+position = Vector2(127, 281)
+scale = Vector2(0.287109, 0.220703)
+texture = ExtResource("4_vbinj")
+
+[node name="TestIcon" type="Sprite2D" parent="."]
+position = Vector2(335, 283)
+scale = Vector2(0.240234, 0.208008)
+texture = ExtResource("5_d62sf")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

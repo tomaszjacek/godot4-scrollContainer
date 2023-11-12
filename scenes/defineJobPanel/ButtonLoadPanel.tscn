@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://b1usl6pmuvwgc"]
 
-[ext_resource type="Script" path="res://scenes/loadPanel/button_load_panel.gd" id="2_6nw4y"]
+[ext_resource type="Script" path="res://scenes/defineJobPanel/button_load_panel.gd" id="1_lgqpi"]
 
 [node name="ButtonLoadPanel" type="Button"]
 custom_minimum_size = Vector2(80, 80)
 offset_right = 80.0
 offset_bottom = 80.0
-script = ExtResource("2_6nw4y")
+script = ExtResource("1_lgqpi")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -7,11 +7,19 @@ const M_F_C = preload("res://scripts/module_file_compiler.gd")
 var gamedata:Dictionary = {}
 
 func _run():
-	print("Hello from the Godot Editor!")
+#	print("Hello from the Godot Editor!")
 	#M_F_M.Print_All_Files_In_Folder(M_C.PATH_FOLDER_DATA)
-	M_F_C.compile_csvdata_files()
+#	M_F_C.compile_csvdata_files()
 	var currentFile:String = "vocabN5_notatnik_UTF-8.data"
 	M_F_C.give_me_file_as_dictionary(currentFile, gamedata)
 	print("\n\n------------------------------------------------------------\n\n")
 	print(gamedata[668])
 
+	print("\n\n------------------------------------------------------------\n\n")
+	print(Time.get_time_string_from_system())
+	
+	print(prepare_date_time_string(Time.get_datetime_string_from_system()))
+	
+func prepare_date_time_string(tmp:String) -> String:
+	var return_string:String = "Date: " + tmp.replace("T"," Time: ")
+	return return_string
