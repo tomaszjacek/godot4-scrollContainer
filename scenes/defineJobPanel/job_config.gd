@@ -38,7 +38,7 @@ func save_job()->void:
 	Global.add_job(hash,new_job)
 	M_S.save_requested.emit("GlobalVariables")
 	warn_info.text = "Job created"
-	
+	M_S.show_jobs_signal.emit()
 	
 func nparts_nrepetitions_selected()->void:
 	var nParts: int = n_parts.value

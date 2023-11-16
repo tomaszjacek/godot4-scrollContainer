@@ -2,7 +2,7 @@ extends Node2D
 
 var test_var = "hello"
 var BATCH_SIZE = 100
-var dataPath = "H://download/testVocab/"
+var dataPath:String = ""
 var file_grabbed:String = ""
 var job_grabbed = ""
 var part_grabbed = ""
@@ -28,13 +28,15 @@ func saveObject() -> Dictionary:
 	var rdict := {
 		"filepath": get_path(),
 		"savedDictJobsToText": var_to_str(dictJobs),
-		"savedFilesStats": var_to_str(dictFilesStats)
+		"savedFilesStats": var_to_str(dictFilesStats),
+		"savedDataPath": dataPath
 	}
 	return rdict
 
 func loadObject(loadedDict: Dictionary) -> void:
 	dictJobs = str_to_var(loadedDict.savedDictJobsToText)
 	dictFilesStats = str_to_var(loadedDict.savedFilesStats)
+	dataPath = loadedDict.savedDataPath
 
 func add_job(hash_job_name:String,job:Dictionary) -> void:
 	var tmp : Dictionary = job

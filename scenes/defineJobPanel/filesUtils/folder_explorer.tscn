@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://coxebpoxm0dpm"]
+
+[ext_resource type="Theme" uid="uid://c8tp3l2ernw1i" path="res://fonts/guit_black_button_theme.tres" id="1_5pfw7"]
+[ext_resource type="Script" path="res://scenes/defineJobPanel/filesUtils/folder_explorer.gd" id="1_q7mbr"]
+
+[node name="mainVBoxContainer" type="VBoxContainer"]
+custom_minimum_size = Vector2(1080, 200)
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.172
+offset_bottom = 0.759979
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5pfw7")
+script = ExtResource("1_q7mbr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Npath" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(37, 0)
+layout_mode = 2
+
+[node name="foldersVBoxContainer2" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="hBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="hBoxContainer2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="upButton" type="Button" parent="hBoxContainer2"]
+layout_mode = 2
+text = "UP"
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="hBoxContainer2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="pinButton" type="Button" parent="hBoxContainer2"]
+layout_mode = 2
+text = "OK, THIS ONE"
+
+[connection signal="pressed" from="hBoxContainer2/upButton" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="hBoxContainer2/pinButton" to="." method="_on_addf_pressed"]

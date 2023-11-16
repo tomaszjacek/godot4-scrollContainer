@@ -3,6 +3,7 @@ extends RefCounted
 const M_C = preload("res://scripts/module_constants.gd")
 const M_F_M = preload("res://scripts/module_file_manager.gd")
 
+
 static func encode_data_to_string(text:String) -> String:
 	return Marshalls.utf8_to_base64(text)
 	
@@ -16,10 +17,19 @@ static func compile_csvdata_files()-> void:
 			var save_file_path:String = file.replace(M_C.FORMAT_CSVDATA,M_C.FORMAT_DATA)
 			if !M_F_M.File_Exists(M_C.PATH_FOLDER_DATA +save_file_path) :
 				print("M_F_C: nie ma takiego pliku - bede kondowal ",M_C.PATH_FOLDER_DATA +save_file_path)
-				M_F_M.Encode_Data_File(M_C.PATH_FOLDER_DATA + file, file)
+				M_F_M.Encode_Data_File(M_C.PATH_FOLDER_DATA, file)
 			else:
 				print("M_F_C: juz taki plik data jest ",M_C.PATH_FOLDER_DATA +save_file_path)
 
+static func compile_csvdata_file(filePath:String,fileName:String)-> void:
+	var file:String=fileName
+	if file.ends_with(M_C.FORMAT_CSVDATA):
+		var save_file_name:String = file.replace(M_C.FORMAT_CSVDATA,M_C.FORMAT_DATA)
+		if !M_F_M.File_Exists(M_C.PATH_FOLDER_DATA +save_file_name) :
+			print("M_F_C: nie ma takiego pliku - bede kondowal ",M_C.PATH_FOLDER_DATA +save_file_name)
+			M_F_M.Encode_Data_File(filePath+"/", file)
+		else:
+			print("M_F_C: juz taki plik data jest ",M_C.PATH_FOLDER_DATA +save_file_name)
 
 static func build_data_dictionaries(dictionaries:Dictionary) -> void:
 	var dict_names:Array = dictionaries.keys()
@@ -31,6 +41,7 @@ static func give_me_file_as_dictionary(fileName:String,dict:Dictionary)->void:
 	var decoded_data:String = decode_data_to_string(encoded_data)
 	var clean_data:PackedStringArray = decoded_data.split("\r\n")
 	data_parse_CSV(clean_data,dict)
+	print("give_me_file_as_dictionary PATH:",M_C.PATH_FOLDER_DATA + fileName)
 	#print("\n\n----------!\n",dict[668],"\n--------!\n\n")
 	
 	

@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv1i4vvpslrur"]
+
+[ext_resource type="Script" path="res://scenes/defineJobPanel/filesUtils/file_panel.gd" id="1_akmjf"]
+[ext_resource type="Theme" uid="uid://c8tp3l2ernw1i" path="res://fonts/guit_black_button_theme.tres" id="2_1j6ww"]
+[ext_resource type="Texture2D" uid="uid://bqp248u1l20rn" path="res://images/file_texture.png" id="2_u5w4r"]
+[ext_resource type="Theme" uid="uid://b5tp0xhfxvk3m" path="res://fonts/import_button_theme.tres" id="3_dspwk"]
+
+[node name="file_panel" type="Control"]
+custom_minimum_size = Vector2(1080, 180)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1740.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_akmjf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.333
+offset_bottom = -59.94
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(960, 180)
+layout_mode = 2
+texture = ExtResource("2_u5w4r")
+
+[node name="dictFile_Label" type="Label" parent="MarginContainer/TextureRect"]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.012
+anchor_top = 0.189
+anchor_right = 0.831
+anchor_bottom = 0.787
+offset_left = 0.52
+offset_top = -1.36
+offset_right = 0.759949
+offset_bottom = 0.11998
+theme = ExtResource("2_1j6ww")
+text = "file in dict folder"
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button" type="Button" parent="MarginContainer/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 160)
+layout_direction = 3
+layout_mode = 2
+anchor_left = 0.024
+anchor_top = 0.111
+anchor_right = 0.158
+anchor_bottom = 0.845
+offset_left = -13.96
+offset_top = -16.98
+offset_right = 7.67999
+offset_bottom = 10.9
+theme = ExtResource("3_dspwk")
+vertical_icon_alignment = 0
+
+[connection signal="pressed" from="MarginContainer/TextureRect/Button" to="." method="_on_importFile_button_pressed"]

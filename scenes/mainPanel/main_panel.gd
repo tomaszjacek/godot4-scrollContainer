@@ -6,8 +6,9 @@ extends Control
 var dynamicBtMainPanel = preload("res://scenes/mainPanel/job.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var path = "H://download/testVocab/"
+	#var path = "H://download/testVocab/"
 	M_S.job_pressed.connect(job_selected)
+	M_S.show_jobs_signal.connect(show_jobs)
 	show_jobs()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,6 +16,7 @@ func _process(delta):
 	pass
 
 func show_jobs():
+	for i in v_box_container.get_children(): i.queue_free()
 	Global.list_jobs("main_panel")
 	var jobList:Array = Global.dictJobs.keys()
 	print("SHOW_JOBS ",jobList)

@@ -6,11 +6,14 @@ func _ready():
 	M_S.load_requested.connect(_load)
 	M_S.save_requested.connect(_save)
 	_load("GlobalVariables")
-
+	if Global.dataPath == "":
+		Global.dataPath = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
+		#Global.dataPath  = "/storage/emulated/0/Android/data/org.godotengine.scrollcontainer/files/"
+		
 func _save(group_name:String) -> void:
-	print("_SAVING.....")
-	var destination_name = group_name + "_saveFile"
 	
+	var destination_name = Globals.M_C.PATH_FOLDER_DATA + group_name + "_saveFile"
+	print("_SAVING.....",destination_name)
 	var save_file = FileAccess.open(destination_name, FileAccess.WRITE) # Open File
 
 	# Go through every object in the SaveLoad group
@@ -31,9 +34,9 @@ func _save(group_name:String) -> void:
 	print("_SAVING.....END")
 	
 func _load(group_name:String) -> void:
-	print("_LOADING.....")
-	var destination_name = group_name + "_saveFile"
-
+	
+	var destination_name = Globals.M_C.PATH_FOLDER_DATA  + group_name + "_saveFile"
+	print("_LOADING.....",destination_name)
 	# Check if the SaveFile exists
 	if !FileAccess.file_exists(destination_name):
 		print("Error, no Save File to load.| destination_name",destination_name)
