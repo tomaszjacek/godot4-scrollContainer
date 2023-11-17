@@ -42,10 +42,11 @@ static func Encode_Data_File(filePath:String,file:String) -> void:
 	var store_file_name = file.replace(M_C.FORMAT_CSVDATA,"")
 	var clean_data:PackedStringArray = load_file_data.split("\r\n")
 	Global.dictFilesStats[store_file_name] = clean_data.size()
-	print("Global.dictFilesStats[store_file_name]: ",Global.dictFilesStats[store_file_name])
+	print("Global.dictFilesStats[store_file_name]: ",store_file_name," ",Global.dictFilesStats[store_file_name])
 	Global.Encode_Data_File = true
 	
 static func Load_Text_File(fileName:String) -> String:
+	print("Load_Text_File...",fileName)
 	var text:String = FileAccess.open(fileName,FileAccess.READ).get_as_text()
 	return text
 

@@ -27,7 +27,11 @@ func update() -> void:
 	var job_dict:Dictionary = {}
 	Globals.M_F_C.give_me_file_as_dictionary(file_name+".data",job_dict)
 	print(job_dict)
-	for n in range(2, 10):
+	var n_words:int = new_job["dic_n_words"]
+	var n_parts:int = new_job["job_n_parts"]
+	var part:int = Global.part_grabbed
+	var new_job_range = calc_range(n_words,n_parts,part)
+	for n in range(new_job_range[0],new_job_range[1]):
 		var new_slot = slot.instantiate()
 		var question : String = job_dict[n]["Kanji"]
 		var answer : String = job_dict[n]["English"]
@@ -39,3 +43,14 @@ func update() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func calc_range(nwords:float,nparts:float,part:float) -> Array:
+	var range:Array = []
+	var step :float = ceil(nwords/nparts)
+	var first:int =  (step*(part-1))+1
+	var last:int = (step*(part-1)) + step
+	if last > nwords:
+		last=nwords
+	range.append(first)
+	range.append(last)
+	return range

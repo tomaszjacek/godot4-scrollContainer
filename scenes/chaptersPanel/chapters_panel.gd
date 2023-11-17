@@ -20,7 +20,7 @@ func update()->void:
 	var file_name:String =	new_job["file_name"]
 	var n_parts:int = new_job["job_n_parts"]
 	var n_reps:int = new_job["job_n_repetitions"]
-	for x in n_parts:
+	for x in range(1,n_parts+1):
 		var new_chapter = chapter.instantiate()
 		grid_container.add_child(new_chapter)
 		new_chapter.set_values(x)

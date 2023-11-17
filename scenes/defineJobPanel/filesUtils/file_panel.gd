@@ -17,6 +17,11 @@ func _process(delta):
 
 func _on_importFile_button_pressed():
 	Globals.M_F_C.compile_csvdata_file(file_full_path,file_name)
+	
+	var file_name1 = file_name.replace(".txt",".data")
+	var dict_length = Globals.M_F_C.get_dictionary_length(file_name1)
+	var file_name2 = file_name1.replace(".data","")
+	Global.dictFilesStats[file_name2] = dict_length
 	M_S.show_dicts.emit()
 
 func set_file_path(path:String,fileName:String)->void:

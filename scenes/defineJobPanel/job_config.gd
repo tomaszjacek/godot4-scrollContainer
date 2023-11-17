@@ -10,6 +10,7 @@ func _ready():
 	n_parts.nparts_selected.connect(nparts_nrepetitions_selected)
 	n_repetitions.nrepetitions_selected.connect(nparts_nrepetitions_selected)
 	%FileName.text = Global.file_grabbed
+	%FileName.setFileName(Global.file_grabbed)
 	print("DUPA: ",Global.file_grabbed)
 
 
@@ -23,9 +24,12 @@ func loadfilename()->void:
 
 func save_job()->void:
 	var new_job : Dictionary = {}
-	new_job["file_name"] = $%FileName.text
+	var file_name:String =  Global.file_grabbed#$%FileName.getFileName()
+	print("save_job...",file_name)
+	new_job["file_name"] = file_name
 	new_job["job_n_parts"] = n_parts.value
 	new_job["job_n_repetitions"] = n_repetitions.value
+	new_job["dic_n_words"] = Global.dictFilesStats[file_name]
 	new_job["learnHistory"] = {}
 	new_job["testHistory"] = {}
 	for n in new_job["job_n_parts"]:

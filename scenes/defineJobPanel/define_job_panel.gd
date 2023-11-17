@@ -47,10 +47,10 @@ func show_stored_dicts():
 		var file_name:String = file.replace(Globals.M_C.FORMAT_DATA,"")
 		#print("Found file: " + file_name)
 		var b = dynamicBtLoadPanel.instantiate()
-		b.set_textt(file_name)
-		b.buttonload_file_pressed.connect(work_file_selected)
 		#b.rect_min_size(Vector2(576,80))
 		dicts_v_box_container.add_child(b)
+		b.set_textt(file_name)
+		b.buttonload_file_pressed.connect(work_file_selected)
 
 		
 func move(target):
