@@ -19,7 +19,10 @@ func _on_importFile_button_pressed():
 	Globals.M_F_C.compile_csvdata_file(file_full_path,file_name)
 	
 	var file_name1 = file_name.replace(".txt",".data")
-	var dict_length = Globals.M_F_C.get_dictionary_length(file_name1)
+	#var dict_length = Globals.M_F_C.get_dictionary_length(file_name1)
+	var tmp_dict:Dictionary = {}
+	Globals.M_F_C.give_me_file_as_dictionary(file_name1,tmp_dict)
+	var dict_length = tmp_dict.size()
 	var file_name2 = file_name1.replace(".data","")
 	Global.dictFilesStats[file_name2] = dict_length
 	M_S.show_dicts.emit()

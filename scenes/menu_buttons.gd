@@ -1,9 +1,12 @@
 extends Control
 @onready var main_panel = $%MainPanel
-@onready var exam_panel = $%ExamPanel
+#@onready var exam_panel = $%ExamPanel
+@onready var learn_panel = %LearnPanel
+
 @onready var chapters_panel = $%ChaptersPanel
 @onready var define_job_panel = $%DefineJobPanel
 @onready var job_config = $%JobConfig
+@onready var test_panel = %TestPanel
 
 var chapter_data: ChapterData
 var panel_on_screen = "MainPanel"
@@ -12,7 +15,8 @@ func _ready():
 	M_S.toppanel_button_pressed.connect(show_ui_panel)
 	#main_panel.file_menu_selected.connect(file_selected)
 	main_panel.show()
-	exam_panel.hide()
+	learn_panel.hide()
+	test_panel.hide()
 	chapters_panel.hide()
 	define_job_panel.hide()
 	job_config.hide()
@@ -55,5 +59,5 @@ func file_selected(fileName:String) ->void:
 	#exam_panel.update(chapter_data)
 	#move("StartMenu",Vector2(-2160,960))
 	#move("MainPanel",Vector2(-1080,0))
-	#move("ExamPanel",Vector2(0,0))
+	#move("LearnPanel",Vector2(0,0))
 	

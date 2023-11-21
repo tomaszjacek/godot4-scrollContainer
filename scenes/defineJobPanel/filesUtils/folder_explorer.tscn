@@ -23,6 +23,7 @@ layout_mode = 2
 [node name="Npath" type="Label" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+clip_text = true
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(37, 0)

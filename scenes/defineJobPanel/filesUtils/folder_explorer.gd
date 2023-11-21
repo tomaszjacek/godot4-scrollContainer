@@ -17,7 +17,7 @@ var file :bool = false
 func _ready():
 	if Global.dataPath == "":
 		path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/"
-		#path  = "/storage/emulated/0/Android/data/org.godotengine.scrollcontainer/files/"
+		#path  = "/storage/emulated/0/Android/data/org.godotengine.scrollcontainer/files/testVocab/"
 	else:
 		path = Global.dataPath
 	

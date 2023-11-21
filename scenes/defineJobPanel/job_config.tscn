@@ -68,7 +68,7 @@ text = "number of parts"
 
 [node name="NParts" type="HSlider" parent="VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 40)
+custom_minimum_size = Vector2(350, 90)
 layout_direction = 3
 layout_mode = 2
 min_value = 4.0
@@ -88,7 +88,7 @@ text = "number of repetitions"
 
 [node name="NRepetitions" type="HSlider" parent="VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 40)
+custom_minimum_size = Vector2(350, 90)
 layout_mode = 2
 min_value = 6.0
 max_value = 10.0

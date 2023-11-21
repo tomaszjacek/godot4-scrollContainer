@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxqhejnw7cutb"]
+
+[ext_resource type="Theme" uid="uid://b0sql0c4nhelx" path="res://fonts/test_question_theme.tres" id="1_sskmp"]
+[ext_resource type="Script" path="res://scenes/testPanel/question_test_panel.gd" id="2_hs4iv"]
+[ext_resource type="FontFile" uid="uid://ba1dicqur3dth" path="res://fonts/Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf" id="3_1oket"]
+[ext_resource type="Texture2D" uid="uid://cwt7ltkiyfkg0" path="res://images/testTextures/test_question_black_decor.png" id="3_tvg3y"]
+
+[node name="question_test_panel" type="PanelContainer"]
+custom_minimum_size = Vector2(1080, 520)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_sskmp")
+script = ExtResource("2_hs4iv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_tvg3y")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 14
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/line_spacing = 2
+theme_override_fonts/font = ExtResource("3_1oket")
+theme_override_font_sizes/font_size = 120
+text = "QUESTION"
+horizontal_alignment = 1
+clip_text = true
+
+[connection signal="gui_input" from="." to="." method="_on_question_panel_gui_input"]

@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b0sql0c4nhelx"]
+
+[ext_resource type="Texture2D" uid="uid://cp0tbw4uo3wlv" path="res://images/testTextures/test_question_panel.png" id="1_4d6cb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l4mcp"]
+texture = ExtResource("1_4d6cb")
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_l4mcp")

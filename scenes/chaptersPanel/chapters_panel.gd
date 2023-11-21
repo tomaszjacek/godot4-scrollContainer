@@ -4,7 +4,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	M_S.part_pressed.connect(part_selected)
+	M_S.part_pressed_learn.connect(part_learn_selected)
+	M_S.part_pressed_test.connect(part_test_selected)
 	M_S.update_chapter_panel.connect(update)
 	#update()
 
@@ -20,12 +21,19 @@ func update()->void:
 	var file_name:String =	new_job["file_name"]
 	var n_parts:int = new_job["job_n_parts"]
 	var n_reps:int = new_job["job_n_repetitions"]
+
 	for x in range(1,n_parts+1):
+
 		var new_chapter = chapter.instantiate()
 		grid_container.add_child(new_chapter)
 		new_chapter.set_values(x)
 
-func part_selected()->void:
+func part_test_selected()->void:
 
-	M_S.update_exam_panel.emit()
-	M_S.toppanel_button_pressed.emit("ExamPanel")
+	M_S.init_test_panel.emit()
+	M_S.toppanel_button_pressed.emit("TestPanel")
+
+func part_learn_selected()->void:
+
+	M_S.update_learn_panel.emit()
+	M_S.toppanel_button_pressed.emit("LearnPanel")

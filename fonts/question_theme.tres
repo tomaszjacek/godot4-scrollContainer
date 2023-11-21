@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://u1cp7rnklyma"]
 
-[ext_resource type="Texture2D" uid="uid://bqib2oah5t7yp" path="res://images/questionPanelTexture.png" id="1_os3f8"]
+[ext_resource type="Texture2D" uid="uid://b5dhlqm1astoq" path="res://images/learnTextures/question_new.png" id="1_uqseh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wx184"]
-texture = ExtResource("1_os3f8")
+texture = ExtResource("1_uqseh")
 
 [resource]
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_wx184")

@@ -29,7 +29,7 @@ func save_job()->void:
 	new_job["file_name"] = file_name
 	new_job["job_n_parts"] = n_parts.value
 	new_job["job_n_repetitions"] = n_repetitions.value
-	new_job["dic_n_words"] = Global.dictFilesStats[file_name]
+	new_job["dict_n_words"] = Global.dictFilesStats[file_name]
 	new_job["learnHistory"] = {}
 	new_job["testHistory"] = {}
 	for n in new_job["job_n_parts"]:

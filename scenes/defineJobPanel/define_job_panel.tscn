@@ -20,6 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
+scroll_deadzone = 5
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2

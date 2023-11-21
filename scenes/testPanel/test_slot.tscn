@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://fermhks6as81"]
+
+[ext_resource type="Script" path="res://scenes/testPanel/test_slot.gd" id="1_1pad1"]
+
+[node name="test_slot" type="TabContainer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.219
+offset_right = -1080.0
+offset_bottom = -420.48
+tab_alignment = 1
+tabs_visible = false
+script = ExtResource("1_1pad1")

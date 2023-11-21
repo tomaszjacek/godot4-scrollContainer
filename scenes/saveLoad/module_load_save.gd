@@ -8,7 +8,7 @@ func _ready():
 	_load("GlobalVariables")
 	if Global.dataPath == "":
 		Global.dataPath = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
-		#Global.dataPath  = "/storage/emulated/0/Android/data/org.godotengine.scrollcontainer/files/"
+		#Global.dataPath  = "/storage/emulated/0/Android/data/org.godotengine.scrollcontainer/files/testVocab/"
 		
 func _save(group_name:String) -> void:
 	

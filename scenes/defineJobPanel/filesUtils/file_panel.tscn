@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" path="res://scenes/defineJobPanel/filesUtils/file_panel.gd" id="1_akmjf"]
 [ext_resource type="Theme" uid="uid://c8tp3l2ernw1i" path="res://fonts/guit_black_button_theme.tres" id="2_1j6ww"]
-[ext_resource type="Texture2D" uid="uid://bqp248u1l20rn" path="res://images/file_texture.png" id="2_u5w4r"]
+[ext_resource type="Texture2D" uid="uid://dpeex66arndxk" path="res://images/file_texture_new.png" id="2_cxw7p"]
 [ext_resource type="Theme" uid="uid://b5tp0xhfxvk3m" path="res://fonts/import_button_theme.tres" id="3_dspwk"]
 
 [node name="file_panel" type="Control"]
-custom_minimum_size = Vector2(1080, 180)
+custom_minimum_size = Vector2(1080, 230)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -1740.0
+offset_bottom = -1690.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_akmjf")
@@ -20,17 +20,17 @@ script = ExtResource("1_akmjf")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.333
-offset_bottom = -59.94
+anchor_bottom = 1.0
+offset_bottom = -1.52588e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-custom_minimum_size = Vector2(960, 180)
+custom_minimum_size = Vector2(960, 230)
 layout_mode = 2
-texture = ExtResource("2_u5w4r")
+texture = ExtResource("2_cxw7p")
 
 [node name="dictFile_Label" type="Label" parent="MarginContainer/TextureRect"]
 unique_name_in_owner = true

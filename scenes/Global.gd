@@ -50,3 +50,14 @@ func list_jobs(text:String)->void:
 	print("--------",text, "-----------")
 	print(dictJobs.keys())
 	print("-------------------")
+
+func calc_range(nwords:float,nparts:float,part:float) -> Array:
+	var range:Array = []
+	var step :float = ceil(nwords/nparts)
+	var first:int =  (step*(part-1))+1
+	var last:int = (step*(part-1)) + step
+	if last > nwords:
+		last=nwords
+	range.append(first)
+	range.append(last)
+	return range
