@@ -7,7 +7,7 @@ extends TabContainer
 func _ready():
 	answer_panel.answer_panel_clicked.connect(change_tab)
 	question_panel.question_panel_clicked.connect(change_tab)
-
+	M_S.switch_hiragana.connect(show_hiragana)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,19 +26,20 @@ func move(target):
 	move_tween.tween_property($answer_panel,"position",target,1)
 
 
-func set_question_panel_label(text:String)->void:
-	question_panel.setlabell(String(text))
+func set_question_panel_label(main:String,help:String)->void:
+	question_panel.setlabell(String(main),String(help))
 
 	
 
-func set_answer_panel_label(text:String)->void:
-	answer_panel.setlabell(String(text))
+func set_answer_panel_label(main:String,help:String)->void:
+	answer_panel.setlabell(String(main),String(help))
 
 	
 	#var position_after_slide = Vector2(0,-100)
 	#move(position_after_slide) 
-
-		
+func show_hiragana()->void:
+	question_panel.hiragana()
+	answer_panel.hiragana()
 
 func change_tab() ->void:
 	if answer_panel.visible:

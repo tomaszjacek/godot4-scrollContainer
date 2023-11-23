@@ -64,6 +64,7 @@ offset_left = 59.0
 offset_top = 317.0
 offset_right = 209.0
 offset_bottom = 467.0
+flat = true
 
 [node name="LearningIcon" type="Sprite2D" parent="LearningButton"]
 position = Vector2(73, 76)
@@ -77,6 +78,7 @@ offset_left = 313.0
 offset_top = 314.0
 offset_right = 463.0
 offset_bottom = 464.0
+flat = true
 
 [node name="TestIcon" type="Sprite2D" parent="TestButton"]
 position = Vector2(91, 74)

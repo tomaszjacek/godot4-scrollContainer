@@ -27,20 +27,31 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="."]
+[node name="MainLabel" type="Label" parent="."]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 14
+theme_override_constants/outline_size = 6
 theme_override_constants/shadow_outline_size = 2
 theme_override_constants/line_spacing = 2
 theme_override_fonts/font = ExtResource("4_qy686")
 theme_override_font_sizes/font_size = 120
-text = "ANSWER"
+text = "警官"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="HelpLabel" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qy686")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
 
 [connection signal="gui_input" from="." to="." method="_on_answer_panel_gui_input"]

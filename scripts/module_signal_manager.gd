@@ -14,3 +14,4 @@ signal import_file(filePath:String)
 signal update_test_panel()
 
 signal init_test_panel()
+signal switch_hiragana()

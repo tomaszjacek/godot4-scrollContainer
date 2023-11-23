@@ -22,6 +22,7 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	M_S.update_test_panel.connect(update_test)
 	M_S.init_test_panel.connect(init_test)
+	M_S.switch_hiragana.connect(show_hiragana)
 #	for n in 10:
 #		var new_slot = slot.instantiate()
 #		new_slot.answer_panel.answer_panel_clicked.connect(new_slot.change_tab)
@@ -61,8 +62,9 @@ func update_test() -> void:
 		child.queue_free()
 	var new_question = test_question.instantiate()
 	panel_container.add_child(new_question)
-	new_question.setlabell(test_dict[index_grabbed]["Kanji"])
-	
+	new_question.setlabell(test_dict[index_grabbed]["Kanji"],test_dict[index_grabbed]["Hiragana"])
+	if Global.hiragana_visible:
+		new_question.hiragana()
 	randomize()
 	#var correct_slot = rng.randf_range(1, 4)
 	var correct_slot = int(rng.randf_range(1, 5))
@@ -76,11 +78,13 @@ func update_test() -> void:
 		var new_answer = test_answer.instantiate()
 #		print("%s %s %s %s",[question, answer,question.sha256_text(), answer.sha256_text()])
 		grid_container.add_child(new_answer)
-		new_answer.setlabell(test_dict[bad_indices[n-1]]["Kanji"])
+		new_answer.setlabell(test_dict[bad_indices[n-1]]["Kanji"],test_dict[bad_indices[n-1]]["Hiragana"])
 		if n == correct_slot:
 			new_answer.texture_rect2.set_texture(ok_decor)
 		else:
 			new_answer.texture_rect2.set_texture(failed_decor)
+		if Global.hiragana_visible:
+			new_answer.hiragana()
 		#new_slot.set_question_panel_label(question)
 		#new_slot.set_answer_panel_label(answer)
 		
@@ -104,4 +108,9 @@ func get_bad_indices(correct_slot:int) -> Array:
 func _process(delta):
 	pass
 
+func show_hiragana()->void:
+	for child in panel_container.get_children():
+		child.hiragana()
+	for child in grid_container.get_children():
+		child.hiragana()
 

@@ -26,7 +26,12 @@ func _on_main_menu_button_pressed():
 #	pass # Replace with function body.
 
 
-#func _on_sun_moon_mode_button_pressed():
+func _on_sun_moon_mode_button_pressed():
 	#M_S.toppanel_button_pressed.emit("ChaptersPanel")
-	#sunmoon_button_pressed.emit()
+	if Global.hiragana_visible:
+		Global.hiragana_visible = false
+	else:
+		Global.hiragana_visible = true
+	print("Global.hiragana_visible ",Global.hiragana_visible)
+	M_S.switch_hiragana.emit()
 #	pass # Replace with function body.

@@ -31,6 +31,12 @@ func _on_answer_panel_gui_input(event):
 		#	just_pressed = false
 		#	emit_signal("answer_panel_clicked")
 	
-func setlabell(t:String)->void:
-	$Label.text = t
-	print(t)
+func setlabell(main:String,help:String)->void:
+	$MainLabel.text = main
+	$HelpLabel.text = help
+
+func hiragana()->void:
+	if Global.hiragana_visible:
+		$HelpLabel.show()
+	else:
+		$HelpLabel.hide()

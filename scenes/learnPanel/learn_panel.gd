@@ -34,11 +34,14 @@ func update() -> void:
 	for n in range(new_job_range[0],new_job_range[1]):
 		var new_slot = slot.instantiate()
 		var question : String = job_dict[n]["Kanji"]
+		var hiragana : String = job_dict[n]["Hiragana"]
 		var answer : String = job_dict[n]["English"]
 #		print("%s %s %s %s",[question, answer,question.sha256_text(), answer.sha256_text()])
 		v_box_container.add_child(new_slot)
-		new_slot.set_question_panel_label(question)
-		new_slot.set_answer_panel_label(answer)
+		new_slot.set_question_panel_label(question,hiragana)
+		new_slot.set_answer_panel_label(answer,hiragana)
+		if Global.hiragana_visible:
+			new_slot.show_hiragana()
 	var b = finish_button.instantiate()
 	v_box_container.add_child(b)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
