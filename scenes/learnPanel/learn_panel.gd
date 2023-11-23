@@ -22,11 +22,11 @@ func update() -> void:
 	print("UPDATING!!!!!!!!!!!!")
 	for child in v_box_container.get_children():
 		child.queue_free()
-	var new_job = Global.dictJobs[Global.job_grabbed]
+	var new_job = Global.get_job(Global.job_grabbed)#Global.dictJobs[Global.job_grabbed]
 	var file_name:String =	new_job["file_name"]
 	var job_dict:Dictionary = {}
 	Globals.M_F_C.give_me_file_as_dictionary(file_name+".data",job_dict)
-	print(job_dict)
+	#print(job_dict)
 	var n_words:int = new_job["dict_n_words"]
 	var n_parts:int = new_job["job_n_parts"]
 	var part:int = Global.part_grabbed

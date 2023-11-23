@@ -82,7 +82,7 @@ static func data_parse_CSV(all_csv_lines:PackedStringArray,stored_csv_dict:Dicti
 							
 							if !stored_csv_dict.keys().has(lineNumber):
 								stored_csv_dict[lineNumber] = {}
-							print("CSV_DATA:::",lineNumber,"|",csv_data," | ",csv_line_headers[csv_i])
+							#print("CSV_DATA:::",lineNumber,"|",csv_data," | ",csv_line_headers[csv_i])
 							stored_csv_dict[lineNumber][ csv_line_headers[csv_i] ] = csv_data
 							#print(str_to_var(csv_data))
 							csv_i += 1

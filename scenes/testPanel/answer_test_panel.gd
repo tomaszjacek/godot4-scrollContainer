@@ -1,4 +1,5 @@
 extends PanelContainer
+@onready var texture_rect2 = %TextureRect2
 
 var locked:bool = false
 
@@ -22,7 +23,9 @@ func _on_answer_panel_gui_input(event):
 #		print("_on_answer_panel_gui_input")
 	if event is InputEventScreenTouch:
 		if event.pressed:
-			
+			%TextureRect2.show()
+			await get_tree().create_timer(1.0).timeout
+			M_S.update_test_panel.emit()
 			
 		#if not event.pressed and just_pressed and event.position.distance_to(prev_pos) < threshold:
 		#	just_pressed = false

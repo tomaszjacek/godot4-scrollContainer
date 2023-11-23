@@ -38,4 +38,4 @@ func _on_question_panel_gui_input(event):
 
 func setlabell(t:String)->void:
 	$Label.text =t
-	print(t)	
+	print(t)

@@ -1,9 +1,9 @@
+TextureRect
 Button
 PanelContainer
 GridContainer
 Container
 VBoxContainer
-TextureRect
 HBoxContainer
 HSplitContainer
 Label
