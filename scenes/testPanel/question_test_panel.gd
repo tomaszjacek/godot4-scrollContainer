@@ -36,12 +36,12 @@ func _on_question_panel_gui_input(event):
 			just_pressed = false
 			emit_signal("question_panel_clicked")
 
-func setlabell(main:String,help:String)->void:
-	$MainLabel.text = main
-	$HelpLabel.text = help
+func setlabell(labelKanji:String,labelHiragana:String,labelEnglish:String)->void:
+	$MainLabel1.text = labelKanji
+	$MainLabel2.text = labelHiragana
+	$MainLabel3.text = labelEnglish
+	$MainLabel1.type = "Kanji"
+	$MainLabel2.type = "Hiragana"
+	$MainLabel3.type = "English"
 
-func hiragana()->void:
-	if Global.hiragana_visible:
-		$HelpLabel.show()
-	else:
-		$HelpLabel.hide()
+

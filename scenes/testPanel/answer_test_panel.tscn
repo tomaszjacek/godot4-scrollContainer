@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bojfn5joskdgh"]
+[gd_scene load_steps=6 format=3 uid="uid://bojfn5joskdgh"]
 
 [ext_resource type="Theme" uid="uid://58sjt5omcoj" path="res://fonts/answer_test_theme.tres" id="1_okpw3"]
 [ext_resource type="Script" path="res://scenes/testPanel/answer_test_panel.gd" id="2_cfrx1"]
 [ext_resource type="Texture2D" uid="uid://ceb3sygqmf6r5" path="res://images/testTextures/test_answer_new_black_decor.png" id="3_881ev"]
 [ext_resource type="FontFile" uid="uid://ba1dicqur3dth" path="res://fonts/Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf" id="4_qy686"]
+[ext_resource type="Script" path="res://scenes/testPanel/MainLabelAnswer.gd" id="5_2issu"]
 
 [node name="answer_test_panel" type="PanelContainer"]
 custom_minimum_size = Vector2(520, 520)
@@ -27,7 +28,8 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="MainLabel" type="Label" parent="."]
+[node name="MainLabel1" type="Label" parent="."]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -42,16 +44,42 @@ theme_override_font_sizes/font_size = 120
 text = "警官"
 horizontal_alignment = 1
 autowrap_mode = 2
+script = ExtResource("5_2issu")
 
-[node name="HelpLabel" type="Label" parent="."]
+[node name="MainLabel2" type="Label" parent="."]
 visible = false
 layout_mode = 2
-size_flags_vertical = 8
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/line_spacing = 2
 theme_override_fonts/font = ExtResource("4_qy686")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 120
+text = "警官"
 horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("5_2issu")
+
+[node name="MainLabel3" type="Label" parent="."]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/line_spacing = 2
+theme_override_fonts/font = ExtResource("4_qy686")
+theme_override_font_sizes/font_size = 120
+text = "警官"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("5_2issu")
 
 [connection signal="gui_input" from="." to="." method="_on_answer_panel_gui_input"]

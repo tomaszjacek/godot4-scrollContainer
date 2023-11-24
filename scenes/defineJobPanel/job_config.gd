@@ -27,16 +27,18 @@ func save_job()->void:
 	var file_name:String =  Global.file_grabbed#$%FileName.getFileName()
 	print("save_job...",file_name)
 	new_job["file_name"] = file_name
-	new_job["job_n_parts"] = n_parts.value
-	new_job["job_n_repetitions"] = n_repetitions.value
+	new_job["job_n_parts"] = int(n_parts.value)
+	new_job["job_n_repetitions"] = int(n_repetitions.value)
 	new_job["dict_n_words"] = Global.dictFilesStats[file_name]
+	var start_date : String = "startDate: " + prepare_date_time_string(Time.get_datetime_string_from_system())
+	new_job["start_date"] = start_date
 	new_job["learnHistory"] = {}
 	new_job["testHistory"] = {}
-	for n in new_job["job_n_parts"]:
+	for n in range(1,new_job["job_n_parts"]+1):
 		var tmpDict:Dictionary={}
-		new_job["learnHistory"][n] = tmpDict
+		new_job["learnHistory"][int(n)] = tmpDict
 		var tmpDictt:Dictionary={}
-		new_job["testHistory"][n] = tmpDictt
+		new_job["testHistory"][int(n)] = tmpDictt
 		
 	var hash = calc_hash(new_job.file_name,str(new_job.job_n_parts),str(new_job.job_n_repetitions))
 	Global.add_job(hash,new_job)
@@ -62,3 +64,7 @@ func nparts_nrepetitions_selected()->void:
 func calc_hash(str1:String,str2:String,str3:String)->String:
 	var tmpString = str1+str2+str3
 	return tmpString.sha256_text()
+
+func prepare_date_time_string(tmp:String) -> String:
+	var return_string:String = "Date: " + tmp.replace("T"," Time: ")
+	return return_string

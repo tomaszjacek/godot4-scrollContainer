@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bduytsem41r62"]
+
+[ext_resource type="Theme" uid="uid://b26g23ofmy6vk" path="res://fonts/learning_finished.tres" id="1_kdd4l"]
+[ext_resource type="Script" path="res://scenes/testPanel/test_finished_button.gd" id="2_u84t1"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(1080, 420)
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_kdd4l")
+script = ExtResource("2_u84t1")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

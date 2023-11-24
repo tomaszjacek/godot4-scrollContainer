@@ -6,7 +6,7 @@ var prev_pos
 
 var threshold = 5
 
-
+var results_saved:bool=false
 signal question_panel_clicked()
 
 
@@ -34,12 +34,20 @@ func _on_question_panel_gui_input(event):
 			
 		if not event.pressed and just_pressed and event.position.distance_to(prev_pos) < threshold:
 			just_pressed = false
+
+			if not results_saved:
+				M_S.learn_answer_requested.emit()
+				results_saved=true
 			emit_signal("question_panel_clicked")
-
-func setlabell(main:String,help:String)->void:
-	$MainLabel.text = main
-	$HelpLabel.text = help
-
+			
+			
+func setlabell(kanji:String,hiragana:String,english:String)->void:
+	$MainLabel1.text = kanji
+	$MainLabel2.text = english
+	$HelpLabel.text = hiragana
+	$MainLabel1.type = "Kanji"
+	$MainLabel2.type = "English"
+	
 func hiragana()->void:
 	if Global.hiragana_visible:
 		$HelpLabel.show()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxeqojgxv2ukw"]
+[gd_scene load_steps=6 format=3 uid="uid://dxeqojgxv2ukw"]
 
 [ext_resource type="Script" path="res://scenes/mainPanel/job.gd" id="1_8qy33"]
 [ext_resource type="Texture2D" uid="uid://ej4a0sjikxca" path="res://images/jobTextures/job_new_1.png" id="3_121d5"]
 [ext_resource type="Theme" uid="uid://c8tp3l2ernw1i" path="res://fonts/guit_black_button_theme.tres" id="3_nut3s"]
+[ext_resource type="Texture2D" uid="uid://cluw54i6u62mw" path="res://images/jobTextures/job_new_black_decor.png" id="4_75rse"]
 [ext_resource type="Texture2D" uid="uid://c51d7kkueji8n" path="res://images/jobTextures/pressed_job_new_green_decor.png" id="4_uwqf6"]
 
 [node name="job" type="Control"]
@@ -84,7 +85,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_75rse")
+
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("4_uwqf6")
 

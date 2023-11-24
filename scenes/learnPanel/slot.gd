@@ -26,13 +26,13 @@ func move(target):
 	move_tween.tween_property($answer_panel,"position",target,1)
 
 
-func set_question_panel_label(main:String,help:String)->void:
-	question_panel.setlabell(String(main),String(help))
+func set_question_panel_label(k:String,h:String,e:String)->void:
+	question_panel.setlabell(String(k),String(h),String(e))
 
 	
 
-func set_answer_panel_label(main:String,help:String)->void:
-	answer_panel.setlabell(String(main),String(help))
+func set_answer_panel_label(k:String,h:String,e:String)->void:
+	answer_panel.setlabell(String(k),String(h),String(e))
 
 	
 	#var position_after_slide = Vector2(0,-100)

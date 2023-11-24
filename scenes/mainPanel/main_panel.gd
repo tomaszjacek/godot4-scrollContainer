@@ -26,7 +26,7 @@ func show_jobs():
 		var b = dynamicBtMainPanel.instantiate()
 		#b.rect_min_size(Vector2(576,80))
 		v_box_container.add_child(b)
-		b.set_textt(jobHash,new_job["file_name"],str(new_job["job_n_parts"]),str(new_job["job_n_repetitions"]))
+		b.set_textt(jobHash,new_job["file_name"],str(new_job["job_n_parts"]),str(new_job["job_n_repetitions"]),str(new_job["start_date"]))
 		#b.button_file_pressed.connect(work_file_selected)
 
 func move(target):

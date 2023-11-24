@@ -7,6 +7,12 @@ var file_grabbed:String = ""
 var job_grabbed = ""
 var part_grabbed = ""
 var hiragana_visible:bool = true 
+
+var learn_type:String = "Kanji"
+
+var test_question_mode:String = "Kanji"
+var test_answer_mode:String = "English"
+
 var Encode_Data_File:bool=false
 # Called when the node enters the scene tree for the first time.
 

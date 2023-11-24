@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://d00u6jmnxwxrj"]
+[gd_scene load_steps=3 format=3 uid="uid://d00u6jmnxwxrj"]
 
 [ext_resource type="Theme" uid="uid://b26g23ofmy6vk" path="res://fonts/learning_finished.tres" id="1_x617j"]
+[ext_resource type="Script" path="res://scenes/learnPanel/learning_finished_button.gd" id="2_ebxjh"]
 
 [node name="learning_finished" type="Button"]
 custom_minimum_size = Vector2(1080, 420)
 offset_right = 8.0
 offset_bottom = 8.0
 theme = ExtResource("1_x617j")
+script = ExtResource("2_ebxjh")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
